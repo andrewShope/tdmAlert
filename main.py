@@ -2,8 +2,8 @@ import mail
 import info
 
 def checkForGameStart(msg, author):
-	keyPhrase = "4v4 TDM game ready to start!"
-	keyAuthor = "SUCKLORD5000"
+	keyPhrase = info.keyPhrase
+	keyAuthor = info.keyAuthor
 	if keyPhrase in msg and author == keyAuthor:
 		players = msg.split(":")[3]
 		playerNames = players[:players.find("-")]
