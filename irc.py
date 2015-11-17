@@ -3,7 +3,7 @@ import socket
 import main
 
 server = "irc.quakenet.org".encode()
-channel = "#nactf.ql".encode()
+channel = "#natdm.ql".encode()
 botnick = "tdmAlert".encode()
 
 def ping(pingID): 
