@@ -24,7 +24,7 @@ def sendEmails(playersInfo):
 
 def makeEmailAddresses(playerNumbers, gateways):
 	'''
-	playerEmails should be a tuple containing the player's name,
+	playerNumbers should be a tuple containing the player's name,
 	phone number, and carrier, respectively. Each of these should
 	be a string.
 	Gateways is a dictionary where the key is the name of the 
