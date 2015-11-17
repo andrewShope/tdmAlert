@@ -38,8 +38,8 @@ def makeEmailAddresses(playerNumbers, gateways):
 
 	playersEmails = []
 	for i, player in enumerate(playerNumbers):
-		email = playerNumbers[1]+gateways[playerNumbers[2]]
-		playerEmails[i] = (playerNumbers[0], email)
+		email = player[1]+gateways[player[2]]
+		playersEmails.append((player[0], email))
 
-	return playerEmails
+	return playersEmails
 

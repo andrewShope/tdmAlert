@@ -29,7 +29,7 @@ def getID(msg):
 	msgList = msg.split(':')
 	return msgList[1]
 
-
+print("here")
 ircsock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 ircsock.connect((server, 6667))
 print("Connected")
@@ -68,6 +68,9 @@ while True:
   ircmsg = ircsock.recv(2048) 
   ircmsg = ircmsg.decode()
   ircmsg = ircmsg.strip('\n\r') 
+  msgAuthor = ircmsg.split(":")[1]
+  msgAuthor = msgAuthor[:msgAuthor.find("!")]
+  print(msgAuthor)
   print(ircmsg)
 
   if ircmsg.find(":Hello "+ botnick.decode()) != -1: 
@@ -76,6 +79,6 @@ while True:
   if ircmsg.find("PING :") != -1 or ircmsg.find("PONG") != -1: 
     ping(getID(ircmsg))
 
-  if main.checkForGameStart(ircmsg) == True:
+  if main.checkForGameStart(ircmsg, msgAuthor):
   	print("That's a go")
-  	sendAlerts()
+  	main.sendAlerts(main.checkForGameStart(ircmsg, msgAuthor))
