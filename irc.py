@@ -70,8 +70,6 @@ while True:
   ircmsg = ircmsg.strip('\n\r') 
   msgAuthor = ircmsg.split(":")[1]
   msgAuthor = msgAuthor[:msgAuthor.find("!")]
-  print(msgAuthor)
-  print(ircmsg)
 
   if ircmsg.find(":Hello "+ botnick.decode()) != -1: 
   	hello()
@@ -80,5 +78,4 @@ while True:
     ping(getID(ircmsg))
 
   if main.checkForGameStart(ircmsg, msgAuthor):
-  	print("That's a go")
   	main.sendAlerts(main.checkForGameStart(ircmsg, msgAuthor))

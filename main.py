@@ -13,16 +13,12 @@ def checkForGameStart(msg, author):
 		return (playerNames)
 
 def sendAlerts(playerNames):
-	print("In sendAlerts, this is playerNames:")
-	print(playerNames)
 	playersContactInfo = []
 	for player in playerNames:
 		if player in info.playersInfo:
 			playerTuple = (player, info.playersInfo[player][0],
 				info.playersInfo[player][1])
 			playersContactInfo.append(playerTuple)
-	print("This is playersContactInfo")
-	print(playersContactInfo)
 	# playersContactInfo will now be an array of two-indexed
 	# tuples. The first index is the player's name and the
 	# second index is the player's email address for their
